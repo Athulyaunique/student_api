@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -84,14 +85,15 @@ WSGI_APPLICATION = 'studentapi.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'studentapi_db',
-        'USER':'postgres',
-        'PASSWORD':'4540',
-        'HOST':'localhost',
-        'PORT':'5432',
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'studentapi_db',
+    #     'USER':'postgres',
+    #     'PASSWORD':'4540',
+    #     'HOST':'localhost',
+    #     'PORT':'5432',
+    # }
+    'default':dj_database_url.config()
 }
 
 
